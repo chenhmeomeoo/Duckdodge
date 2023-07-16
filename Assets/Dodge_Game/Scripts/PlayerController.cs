@@ -21,12 +21,12 @@ public class PlayerController : MonoBehaviour
     private Gamepad gamepad;
     private Transform CameraTrans;
     public Animator anim;
-    public JoystickControl joystick;
+    public Joystick joystick;
     private void Awake()
     {
         Instance = this;
         CameraTrans = Camera.main.gameObject.transform;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
     private void Start()
     {
@@ -37,8 +37,8 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.Instance.isGameRuning && isLive)
         {
-            float x = joystick.direction.x;
-            float y = joystick.direction.y;
+            float x = joystick.Direction.x;
+            float y = joystick.Direction.y;
 
             Vector3 camPosition = new Vector3(CameraTrans.position.x, transform.position.y, CameraTrans.position.z);
             Vector3 direction = (transform.position - camPosition).normalized;
@@ -60,13 +60,12 @@ public class PlayerController : MonoBehaviour
                 transform.forward = smoothMovement;
             }
 
-
             if (transform.position.z >= GameManager.Instance.currentMap.TopLimit.position.z ||
                transform.position.z <= GameManager.Instance.currentMap.BotLimit.position.z ||
                transform.position.x >= GameManager.Instance.currentMap.RightLimit.position.x ||
                transform.position.x <= GameManager.Instance.currentMap.LeftLimit.position.x)
             {
-                transform.DOLookAt(Vector3.zero, 0.3f);
+                transform.DOLookAt(new Vector3(0,transform.position.y,0), 0.3f);
             }
 
         }

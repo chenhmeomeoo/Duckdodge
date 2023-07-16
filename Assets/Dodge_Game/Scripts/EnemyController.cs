@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
+       
         isLive = true;
         isAttack = false;
     }

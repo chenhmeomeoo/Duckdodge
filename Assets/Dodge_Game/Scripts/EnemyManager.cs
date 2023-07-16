@@ -42,22 +42,22 @@ public class EnemyManager : MonoBehaviour
         int randomEnemiesRate = Random.Range(0, 100);
         if (0 <= randomEnemiesRate && randomEnemiesRate < 34)
         {
-            SpwanEnemy(Random.Range(0, 5));
+            SpwanEnemy(Random.Range(0, 2));
             return;
         }
         if(35<=randomEnemiesRate && randomEnemiesRate <70)
         {
-            SpwanEnemy(Random.Range(5, 10));
+            SpwanEnemy(Random.Range(2, 4));
             return;
         }
         if(70<=randomEnemiesRate && randomEnemiesRate<90)
         {
-            SpwanEnemy(Random.Range(10, 13));
+            SpwanEnemy(Random.Range(4, 6));
             return;
         }
         if(90 <= randomEnemiesRate && randomEnemiesRate < 100)
         {
-            SpwanEnemy(Random.Range(10, 16));
+            SpwanEnemy(Random.Range(6, 8));
             return;
         }
     }
@@ -99,7 +99,7 @@ public class EnemyManager : MonoBehaviour
             z = Random.Range(top, bot);
         }
 
-        y = 0f;
+        y = 1.94f;
 
         return new Vector3(x, y, z);
     }

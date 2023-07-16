@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowInGame();
         SoundManager.Instance.PlayBG(SoundTag.Bgm_ingame);
         PlayerController.Instance.isLive = true;
-        PlayerController.Instance.anim.SetTrigger("run");
+        PlayerController.Instance.anim.Play("Run");
         PlayerController.Instance.GetComponent<Collider>().enabled = true;
     }
     public void RelayGame()
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         isGameRuning = true;
         PlayerController.Instance.gameObject.transform.position = PlayerController.Instance.basePos;
         PlayerController.Instance.isLive = true;
-        PlayerController.Instance.anim.SetTrigger("run");
+        PlayerController.Instance.anim.Play("Run");
         PlayerController.Instance.GetComponent<Collider>().enabled = true;
         EnemyManager.Instance.durationSpawn = 1;
     }
