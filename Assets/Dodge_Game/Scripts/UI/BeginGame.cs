@@ -9,7 +9,7 @@ using QuangDM.Common;
 
 public class BeginGame : MonoBehaviour
 {
-    public Button startGame;
+    public Button startGame,shop;
     public TextMeshProUGUI txtGameName;
     private void Awake()
     {
@@ -17,10 +17,15 @@ public class BeginGame : MonoBehaviour
     public void Start()
     {
         startGame.onClick.AddListener(StartGame);
+        shop.onClick.AddListener(ShowShop);
     }
     private void StartGame()
     {
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Button);
         GameManager.Instance.StartGame();
+    }
+    void ShowShop()
+    {
+        UIManager.Instance.ShowShop();
     }
 }

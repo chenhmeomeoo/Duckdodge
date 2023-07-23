@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using QuangDM.Common;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Instance;
+    public static PlayerController Instance; // singleton
 
     [Header("----------Value Player----------------")]
     public float steeringPower = 180f;
@@ -19,25 +19,28 @@ public class PlayerController : MonoBehaviour
 
     [Header("----------Connect----------------")]
     private Gamepad gamepad;
-    private Transform CameraTrans;
+    private Transform CameraTrans; //
     public Animator anim;
     public Joystick joystick;
+    public Transform posModelCharacter;
     private void Awake()
     {
         Instance = this;
         CameraTrans = Camera.main.gameObject.transform;
-        //anim = GetComponent<Animator>();
     }
     private void Start()
     {
         basePos = transform.position;
         isLive = true;
+        //anim = GetComponentInChildren<Animator>();
+
     }
-    private void Update()
+    private void Update() // cập nhật liên tục trên từng frame
     {
+        //di chuyển player
         if (GameManager.Instance.isGameRuning && isLive)
         {
-            float x = joystick.Direction.x;
+            float x = joystick.Direction.x; // joystick unity
             float y = joystick.Direction.y;
 
             Vector3 camPosition = new Vector3(CameraTrans.position.x, transform.position.y, CameraTrans.position.z);
@@ -48,9 +51,9 @@ public class PlayerController : MonoBehaviour
             Vector3 movement = Vector3.ClampMagnitude(forwardMovement + horizontalMovement, 1f);
 
             //smooth rate
-            smoothMovement = Vector3.Lerp(transform.forward, movement, 0.05f);
+            smoothMovement = Vector3.Lerp(transform.forward, movement, 0.05f); // di chuyển theo hướng 
 
-            if (y > -0.0001f && y < 0.0001f && x > -0.0001f && x < 0.0001f)
+            if (y > -0.0001f && y < 0.0001f && x > -0.0001f && x < 0.0001f) // khi không sử dụng joystick
             {
                 transform.Translate(transform.forward * Speed * Time.deltaTime, Space.World);
             }
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour
                 transform.forward = smoothMovement;
             }
 
+            //khi đi tới giới hạn thì player quay về tọa độ (0,y,0) trong map
             if (transform.position.z >= GameManager.Instance.currentMap.TopLimit.position.z ||
                transform.position.z <= GameManager.Instance.currentMap.BotLimit.position.z ||
                transform.position.x >= GameManager.Instance.currentMap.RightLimit.position.x ||
@@ -78,16 +82,5 @@ public class PlayerController : MonoBehaviour
             item.GetItem();
         }
     }
-    public void Die()
-    {
-        GameManager.Instance.GameOver();
-    }
-    public void FootStepSound()
-    {
-        SoundManager.Instance.PlaySFX(SoundTag.SFX_Main_Run);
-    }
-    public void DieSound()
-    {
-        SoundManager.Instance.PlaySFX(SoundTag.SFX_Main_Die);
-    }
+  
 }

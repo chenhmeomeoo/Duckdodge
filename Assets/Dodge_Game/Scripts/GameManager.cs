@@ -2,6 +2,7 @@
 using System.Collections;
 using TMPro;
 using QuangDM.Common;
+using System.Collections.Generic;
 
 public enum GAME_STATE
 {
@@ -15,8 +16,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] GAME_STATE GameState = GAME_STATE.init;
-    public bool gameStarted => GameState == GAME_STATE.playing;
-    
+    public bool gameStarted => GameState == GAME_STATE.playing; // get dữ liệu gamestarted trả về trạng thái playing
+   
     public bool isGameRuning;
 
     private bool CanSpawnEnemy;
@@ -59,6 +60,9 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text fpsText;
     private float deltaTime;
+    [Header("--------Skin----------")]
+    public List<DataSkin> skinPlayer;
+
     void Update()
     {
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;

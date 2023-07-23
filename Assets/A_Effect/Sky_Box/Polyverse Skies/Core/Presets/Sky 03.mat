@@ -173,10 +173,10 @@ Material:
     - _BumpScale: 1
     - _CloudHeight: 0
     - _CloudsCat: 1
-    - _CloudsHeight: 0.2
+    - _CloudsHeight: 0.047
     - _CloudsIntensity: 1
     - _CloudsLitbySun: 0
-    - _CloudsRotation: 100
+    - _CloudsRotation: 0
     - _CloudsRotationSpeed: 1
     - _Contrast: 0.477
     - _Contrsat: 1

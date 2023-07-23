@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public BeginGame beginGame;
     public InGame inGame;
     public GameOver gameOver;
+    public ShopControler ShopControl;
     private void Awake()
     {
         Instance = this;
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
         beginGame.gameObject.SetActive(false);
         inGame.gameObject.SetActive(false);
         gameOver.gameObject.SetActive(false);
+        ShopControl.gameObject.SetActive(false);
     }
     public void ShowBeginGame()
     {
@@ -33,5 +35,10 @@ public class UIManager : MonoBehaviour
     {
         CloseAllPanel();
         gameOver.gameObject.SetActive(true);
+    }
+    public void ShowShop()
+    {
+        CloseAllPanel();
+        ShopControl.gameObject.SetActive(true);
     }
 }
