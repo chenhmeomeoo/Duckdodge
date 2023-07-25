@@ -10,7 +10,4 @@ public class DataSkin
     public GameObject modelCharacter,modelPreview;
     public int idSkin;
     public string nameCharacter;
-    public bool isSelect;
-
-
 }

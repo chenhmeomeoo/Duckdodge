@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.gameOver.SetBestScore(PlayerData.Instance.BestScore);
         UIManager.Instance.ShowBeginGame();
         SoundManager.Instance.PlayBG(SoundTag.Bgm_home);
+        SkinInGame();
     }
     public void PlayerDead()
     {
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowInGame();
         SoundManager.Instance.PlayBG(SoundTag.Bgm_ingame);
         PlayerController.Instance.isLive = true;
-        PlayerController.Instance.anim.Play("Run");
+        PlayerController.Instance.anim.SetTrigger("run");
         PlayerController.Instance.GetComponent<Collider>().enabled = true;
     }
     public void RelayGame()
@@ -133,8 +134,17 @@ public class GameManager : MonoBehaviour
         isGameRuning = true;
         PlayerController.Instance.gameObject.transform.position = PlayerController.Instance.basePos;
         PlayerController.Instance.isLive = true;
-        PlayerController.Instance.anim.Play("Run");
+        PlayerController.Instance.anim.SetTrigger("run");
         PlayerController.Instance.GetComponent<Collider>().enabled = true;
         EnemyManager.Instance.durationSpawn = 1;
+    }
+    public void SkinInGame()
+    {
+        StartCoroutine(waitTimeSpawn());    
+    }
+    IEnumerator waitTimeSpawn()
+    {
+        yield return new WaitForEndOfFrame();
+        Instantiate(skinPlayer[0].modelCharacter, PlayerController.Instance.posModelCharacter);
     }
 }

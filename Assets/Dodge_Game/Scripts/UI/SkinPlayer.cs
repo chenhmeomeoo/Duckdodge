@@ -23,7 +23,6 @@ public class SkinPlayer : MonoBehaviour
         if (idSKin == 0)
         {
             isSelect = true;
-            //Instantiate(modelCharacter, PlayerController.Instance.posModelCharacter);
 
         }
         else
@@ -62,12 +61,14 @@ public class SkinPlayer : MonoBehaviour
         if (isSelect)
         {
             imgFrame.sprite = sprite_Select;
-            GameObject c = Instantiate(modelPreivew,shopControler.posPreview);
+            Instantiate(modelPreivew,shopControler.posPreview);
+
         }
         else
         {
             imgFrame.sprite = sprite_Noselect;
         }
+
         txtNameSkin.text = nameSkin.ToString();
         imgSkin.sprite = spriteAvatar;
     }

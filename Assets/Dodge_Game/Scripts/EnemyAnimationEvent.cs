@@ -11,10 +11,11 @@ public class EnemyAnimationEvent : MonoBehaviour
     {
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Enemy_Attack);
         SoundManager.Instance.StopCurrentBG();
-        PlayerController.Instance.anim.Play("Death");
+        PlayerController.Instance.anim.SetTrigger("die");
         PlayerController.Instance.isLive = false;
         PlayerController.Instance.GetComponent<Collider>().enabled = false;
         GameManager.Instance.isGameRuning = false;
+        Debug.LogError("die");
     }
     public void Die()
     {

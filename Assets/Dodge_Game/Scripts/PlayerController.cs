@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         basePos = transform.position;
         isLive = true;
-        //anim = GetComponentInChildren<Animator>();
+        
 
     }
     private void Update() // cập nhật liên tục trên từng frame
@@ -74,6 +74,11 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    public void SetAnimation()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Item")

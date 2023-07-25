@@ -16,6 +16,7 @@ public class ShopControler : MonoBehaviour
         btn_Back.onClick.AddListener(CloseShop);
         btn_Select.onClick.AddListener(Onclick_UseCharacter);
         SpawnItemSkin();
+        LoadData();
     }
     private void OnEnable()
     {
@@ -44,6 +45,7 @@ public class ShopControler : MonoBehaviour
         {
             listItems[i].LoadData();
         }
+
     }
     public void SelectItem(int id)
     {
@@ -59,7 +61,6 @@ public class ShopControler : MonoBehaviour
         listItems[id].isSelect = true;
         idSkinTarget = id;
         LoadData();
-
     }
     public void Onclick_UseCharacter()
     {

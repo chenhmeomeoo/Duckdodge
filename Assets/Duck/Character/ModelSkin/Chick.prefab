@@ -647,6 +647,7 @@ GameObject:
   - component: {fileID: 7465606655834807861}
   - component: {fileID: 7465606655834807863}
   - component: {fileID: 7465606655834807860}
+  - component: {fileID: 8055607877856678104}
   m_Layer: 0
   m_Name: Chick
   m_TagString: Untagged
@@ -676,7 +677,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7465606655834807863
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -693,7 +694,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &7465606655834807860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -708,6 +710,18 @@ CapsuleCollider:
   m_Height: 0.5936104
   m_Direction: 1
   m_Center: {x: 0, y: 0.37263435, z: -0.010133028}
+--- !u!114 &8055607877856678104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465606655834807850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdfa35a0eeefa740bada0e5ab76cda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7465606655880892505
 GameObject:
   m_ObjectHideFlags: 0

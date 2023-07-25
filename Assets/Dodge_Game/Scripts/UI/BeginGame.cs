@@ -21,6 +21,7 @@ public class BeginGame : MonoBehaviour
     }
     private void StartGame()
     {
+        PlayerController.Instance.SetAnimation();
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Button);
         GameManager.Instance.StartGame();
     }
