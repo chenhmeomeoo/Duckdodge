@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public Joystick joystick;
     public Transform posModelCharacter;
+    public GameObject vfx;
     private void Awake()
     {
         Instance = this;

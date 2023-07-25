@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
         PlayerData.Instance.Save();
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Lose_Screen);
         UIManager.Instance.ShowGameOver();
+        PlayerController.Instance.vfx.SetActive(false);
     }
     public void Revive()
     {
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
         PlayerController.Instance.isLive = true;
         PlayerController.Instance.anim.SetTrigger("run");
         PlayerController.Instance.GetComponent<Collider>().enabled = true;
+        PlayerController.Instance.vfx.SetActive(true);
     }
     public void RelayGame()
     {
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
         PlayerController.Instance.isLive = true;
         PlayerController.Instance.anim.SetTrigger("run");
         PlayerController.Instance.GetComponent<Collider>().enabled = true;
+        PlayerController.Instance.vfx.SetActive(true);
         EnemyManager.Instance.durationSpawn = 1;
     }
     public void SkinInGame()

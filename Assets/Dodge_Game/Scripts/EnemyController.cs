@@ -94,7 +94,6 @@ public class EnemyController : MonoBehaviour
                 CameraController.Instance.ZoomIn();
                 isAttack = true;
                 anim.SetTrigger("attack");
-                Debug.LogError("attack");
             }
         }
     }

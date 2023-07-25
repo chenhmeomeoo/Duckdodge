@@ -9,10 +9,10 @@ public class EnemyAnimationEvent : MonoBehaviour
     private int Score;
     public void Attack()
     {
+        PlayerController.Instance.isLive = false;
+        PlayerController.Instance.anim.SetTrigger("die");
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Enemy_Attack);
         SoundManager.Instance.StopCurrentBG();
-        PlayerController.Instance.anim.SetTrigger("die");
-        PlayerController.Instance.isLive = false;
         PlayerController.Instance.GetComponent<Collider>().enabled = false;
         GameManager.Instance.isGameRuning = false;
         Debug.LogError("die");
