@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringPower: 3
-  SpeedMultiplier: 20
+  SpeedMultiplier: 4
   Score: 1
   isLive: 0
   isAttack: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1153502932967838492}
   m_Layer: 0
   m_Name: TonNew
-  m_TagString: Untagged
+  m_TagString: enemy_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6593042, y: 1, z: 0.5938699}
-  m_Center: {x: -0.02307704, y: 0, z: 0.08124446}
+  m_Center: {x: -1.29, y: 0, z: 0.08}
 --- !u!54 &2826384971333770924
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringPower: 3
-  SpeedMultiplier: 5
+  SpeedMultiplier: 4
   Score: 1
   isLive: 0
   isAttack: 0
@@ -284,7 +284,7 @@ PrefabInstance:
     - target: {fileID: 3605039465790616458, guid: 2a5e2a3368a6d9941a86a0abab70ec28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.315
       objectReference: {fileID: 0}
     - target: {fileID: 3605039465790616458, guid: 2a5e2a3368a6d9941a86a0abab70ec28,
         type: 3}

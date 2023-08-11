@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1153502932967838492}
   m_Layer: 0
   m_Name: TonNew 1
-  m_TagString: Untagged
+  m_TagString: enemy_3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringPower: 3
-  SpeedMultiplier: 5
+  SpeedMultiplier: 4
   Score: 1
   isLive: 0
   isAttack: 0
