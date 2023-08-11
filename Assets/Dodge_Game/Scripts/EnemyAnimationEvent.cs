@@ -15,7 +15,8 @@ public class EnemyAnimationEvent : MonoBehaviour
         SoundManager.Instance.StopCurrentBG();
         PlayerController.Instance.GetComponent<Collider>().enabled = false;
         GameManager.Instance.isGameRuning = false;
-        Debug.LogError("die");
+
+
     }
     public void Die()
     {

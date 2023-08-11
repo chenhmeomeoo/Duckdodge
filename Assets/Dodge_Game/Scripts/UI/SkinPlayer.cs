@@ -23,7 +23,6 @@ public class SkinPlayer : MonoBehaviour
         if (idSKin == 0)
         {
             isSelect = true;
-
         }
         else
         {

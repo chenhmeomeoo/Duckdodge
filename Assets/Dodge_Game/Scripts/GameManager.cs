@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public enum GAME_STATE
 {
-    init,
+    init, // bat dau game
     playing,
     pause,
     over
@@ -89,8 +89,8 @@ public class GameManager : MonoBehaviour
     }
     public void EnemyDie(int Score)
     {
-        CurrentScore += Score;
-        EnemiesRemain--;
+        CurrentScore = CurrentScore+ Score;
+        EnemiesRemain= EnemiesRemain-1;
     }
     public void GetItemPower(PowerType type)
     {

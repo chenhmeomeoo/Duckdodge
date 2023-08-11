@@ -19,7 +19,6 @@ public class StateCharacter : MonoBehaviour
     public void Die()
     {
         GameManager.Instance.GameOver();
-        Debug.LogError("die");
     }
     public void FootStepSound()
     {

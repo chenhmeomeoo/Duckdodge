@@ -80,13 +80,13 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Item")
-        {
-            PowerItem item = other.gameObject.GetComponent<PowerItem>();
-            item.GetItem();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Item")
+    //    {
+    //        PowerItem item = other.gameObject.GetComponent<PowerItem>();
+    //        item.GetItem();
+    //    }
+    //}
   
 }
