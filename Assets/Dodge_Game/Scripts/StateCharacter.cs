@@ -1,4 +1,4 @@
-using QuangDM.Common;
+﻿using QuangDM.Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,15 +16,15 @@ public class StateCharacter : MonoBehaviour
     {
         
     }
-    public void Die()
+    public void Die() // thực hiện player thua cuộc
     {
         GameManager.Instance.GameOver();
     }
-    public void FootStepSound()
+    public void FootStepSound() // phát âm thanh di chuyển của player
     {
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Main_Run);
     }
-    public void DieSound()
+    public void DieSound() // phát âm thanh die của player
     {
         SoundManager.Instance.PlaySFX(SoundTag.SFX_Main_Die);
     }

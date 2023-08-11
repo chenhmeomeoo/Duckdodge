@@ -33,7 +33,7 @@ public class ShopControler : MonoBehaviour
         int count = GameManager.Instance.skinPlayer.Count;
         for (int i = 0; i < count; i++)
         {
-            SkinPlayer c = Instantiate(prefabsSkin, postion_Spawn);
+            SkinPlayer c = Instantiate(prefabsSkin, postion_Spawn); // spawn ra 6 cai skin
             c.gameObject.SetActive(true);
             c.Init(this,i);
             listItems.Add(c);

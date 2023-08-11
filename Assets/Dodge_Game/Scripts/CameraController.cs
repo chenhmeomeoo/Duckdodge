@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 public class CameraController : MonoBehaviour
 {
+    //sư dụng pakage cinemachine camera
     public static CameraController Instance;
     public CinemachineRecomposer camzoom;
     private float zoomIn, zoomOut;

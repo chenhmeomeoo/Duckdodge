@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using QuangDM.Common;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,9 +38,9 @@ public class EnemyController : MonoBehaviour
 
                 Vector3 target = PlayerController.Instance.transform.position - base.transform.position;
                 float maxRadiansDelta = this.steeringPower * Time.deltaTime;
-                Vector3 forward = Vector3.RotateTowards(base.transform.forward, target, maxRadiansDelta, 0f);
+                Vector3 forward = Vector3.RotateTowards(base.transform.forward, target, maxRadiansDelta, 0f);// hướng xoay người
                 forward.y = 0;
-                base.transform.rotation = Quaternion.LookRotation(forward);
+                base.transform.rotation = Quaternion.LookRotation(forward);// xoay mặt đến vị trí player
 
 
                 if (transform.position.z >= GameManager.Instance.currentMap.TopLimit.position.z ||
